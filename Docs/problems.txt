@@ -1,0 +1,68 @@
+Problems enocuntered, and must be resolved:
+
+
+Skin Editor Drawing
+-------------------
+28 Feb
+------
+When doing the painting code for the Skin Edit dialog, the values that feed the TDIBitmap8::StretchToDC() function somehow get slightly mangled compared to the original CBuilder code. This is very noticable as the dialog is being resized, and the skin swims as the resizing takes place. This is only noticable for those users who have full window drag enabled for their windoes, but it is still important. 
+
+This may produce problems when taking mosue cooridates and converting back. The error does not seem to ever get greater than 1 skin pixel, but must still be fixed
+
+Keystrokes
+----------
+
+28 Feb
+------
+The keystroke mecahnism operates of the premise that the main window of any part of the proram receives all keyboard messages first, and then filters them for actions,a nd then passes them down to the controls, namely edit boxes ar ehte only ones in the main interface right now.
+
+As MFC stands, Messages are sent to child dialogs, and not the most parent one. Because of this, all Child dialogs that are used inside the Main Editor, Skin Editor, or any other editor, implement a PreTranslateMessage event, and if the message is a keyboard one, sends the message back to the parent window, and does not allow the child dialog to process it. In the occurance of Child dialogs within child dialogs, the message will be forwarded up the chain of parent/child dialogs, until the main parent gets the message.
+
+This will produce problems when editing is occuring in the edit boxes of the user interface, and as it stands, this is not possible. As soon as a keypress is encountered, the focus of the dialog goes to the default control, almost always the side tool tab control.
+
+Other problems include when control-related keys are pressed, like home, or tab. Theys keys do not perform the required funciton, but just effect the control, and not the program.
+
+All these issues must be resolved.
+
+
+4 March
+-------
+The problems regarding typing in edit boxes and handling keystrokes has been resolved. The parent dialog of the edit box in question handles WM_KEYDOWN messages in the PreTranslateMessage() function, and if the target hWnd is an edit box (Determined if the ES_AUTOHSCROLL style is on the window, crude but it works) it chekcs if the key is a escape or a return, and if it is, it exits the edit box.
+
+
+
+Dialog Memeber References and Controls
+--------------------------------------
+The main core of the program is controlled from the KeyFuncs module, which does alot of the grunt work of deleting vertices and what not. Mainly the non-interactive processses are done here. However, many paremeters of tools are read from the state of dialog controls on several dialogs. 
+
+The way this is done is that the dialog variables are directly accessed, and the controls are referenced by name. This is fairly ungraceful, and would be a good thing to change. Perhaps have a global (again not good, but possible better) structure that contains all relevant data, which is updated along with the ui. Maintaing synchorsity between UI elements and this may produce problems in itself.
+
+Spin Controls
+-------------
+28 Feb
+------
+For almost all the spin controls some way of handling the edit boxes associated with these spinners must be done. It hsouldn't matter if the spinner is buddied or not.
+
+
+MemoryLeaks
+-----------
+26 Feb
+------
+
+- Got some serious memory leaks going on. I do not know if they were occuring before or after going to VC, but VC quits the program and dumps out varying amounts of memory leaks being found. FIX ME NOW!
+
+27 Feb
+------
+
+- Wow, I just read about the memory leak tracking stuff, and it found my problems quickly and easitly. It won't guarantee that all leaks are gone completely, but its damned good.
+
+- Most leaks that have bene reported have been fixed.  However there are still 3 of them. They shouldn't be there, but it says they are. 
+
+
+MFC
+---
+
+6 March
+-------
+
+Encountering more and more difficult part with mfx. Mostly little things. Cannot change the color of a static label control at runtime, nor for an edit control for that matter. Need to do this for the coorodinate things on the bottom tool bar.

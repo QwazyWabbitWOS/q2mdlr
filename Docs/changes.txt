@@ -1,0 +1,192 @@
+For most classes, they are prefixed with T, like TCompleteModel, may change this to CCompleteModel or some other prefix, to stay away from the borland model. :) Maybe use M.
+
+All __fastcall references have been removed.
+
+Changed all AnisStrng references to CString. It irks me, but its easy. Why can't VC have a non-mfc based string class? ugh.
+
+Borland and MS handle variable declerations inside for loops. Don't know what is the standardised way of doing it, but in Borland products, vars declared inside a for statement have a scope limited to that for statment, and VC has it visible from then on. Annoying.
+
+All includes to vcl.h have been removed
+
+In TDIBitmap8::SetSize, the hdc used to create a dib section was the top most window. Changes it to use the desktop instead.
+
+In TDIBitmap::LoadBMP, remmed out the message boxes that would appear on fialure to load. Since its just a helper class, it really shouldn't be there.
+
+Renamed ModelType.h and ModelType.cpp to MDLType.*
+Renamed Globals.* to MdlGlobs.*
+
+In MDLType.h, changed:
+	#include "mem.h" to #include <memory.h>
+	#include "LWO_Header.h" to #include "LWOHeadr.h"
+
+
+In Bones.cpp, was using abs() to do absolute value. Should be using fabs. Got rid of lots of warnings.
+
+All common dialog controls and their usage must be rewritten since they are soo different between cbuilder and vc
+
+In TCompleteModel, for the saving of mdl and md2's, a progressbar and an index control was passed to the function, changed this to just the flename. will figure out a method of callback at a later stage.
+
+In all the worker classes, such as TCompleteModel, whenever an error occurs laoding or saving, a message box is lauched from that class. Bad thing. All of these ahave been remmed out and a proper error code system will be put in place.
+
+In many of the file i/o functions, a functino called fnsplit was used to split filenames up. VC doesn't have this function, so a replacement had to be written. This was placed in mdlconst.h, might be moved.
+
+Had to write a TextToShortcut function to cater for shortcut keys from english to numbers.
+
+Moved the ReverseW() and related functinos into Mdlconst.cpp and h.
+
+Got rid of heaps of warnings, which were all just "assingin accuracte variable to not so accurate varaible" Just cast heaps of lines of code. 
+
+Fixed any Unreferenced var wanrings by getting rid of the vars.
+
+suffixed all the values in anorms.h so get rid of all the warnings.
+
+Moved the TextToShortcut function and anything elses related to shrotcuts into the MenuItem modules.
+
+Moved PaletteFile, LightingFile, PaintingFile into MdlGlobs.cpp, but did not make them in the
+header fiel, since they weren't that way before. Prefixed them with g_
+
+Removing all MRU references temporarily they can be added in near the end.
+
+All TCanvas references have been changed to CDCs. TCanvas was much easier, had a lot of micromanagement shit that mfc doesn't do, since its basically just wraps around the win32 api, whereas the vcl made most of it easier to use.
+
+Remarked out the ControlCheckChildren and ControlHasChild from mainfunc.* Since it shouldn't really be used at all.
+
+In Draw2DGrid, placed a return at beginning of function, since it required to get the check state of a menu item from the main window. It wasn't being used at all anyway.
+
+In the 3d drawing in mainfuncs, there were timing related stuff. Has been removed
+
+Addin in a g_CurSkin instead of having the current skin a member of the Skin editor dialog. While both have merits, having it global will reduce the nunmber of external references to window classes.
+
+Changed Draw3DInfo class to CDrawViewInfo, so it can be passed to ortho drawing funcs as well as 3d funcs. 
+
+Changed the DrawViewMatrix function to accept a TCompleteModel and a CDrawViewInfo, to remove as many global and window class refs as easily possible.
+
+Changed the DoXFormVertFaceBone in mainfuncs, to take a CXFormItemInfo class which hold most of the informatino the functions needs that is stored by the main dialog. It would also be quicker passing a pointer, than passing 60 bytes of data along the stack. But may be negated bythe time required to set up and decode the structure.
+
+remmed out the draw3dsunked and draw3draised functions in mainfucs, since they were never used. But might be one day.
+
+RegControl.* became RegCtrl.*
+
+Made a CProgramSettings class to cater for laoding and setting registry settings for various stuffs, and to also provide other globalb program changes. This is mainly again for moving as much shit out of the dialog classes as possible.
+
+Rewrote much of the read and write confg functions. Doesn't matter since config file had a version tag, its no big deal. Reading and writing the window positions is identifyed by the dialig ID from the resourece, and a case statement or what not. Not as graceful as the automatic choosing of the windows in cbuilder, but I'm sure there would be a way to reproduce that.
+
+Window posiioton and mru list have been temporarily taken out of the config file.
+
+Got rid of the global PANELWIDTH variable, it is now read form the fialog every time. Slower, but better.
+
+Moved the GetSelectionCenter function from Mainfunc.* into a member funtion of TCompleteModel. Made sense. Moved AnythingSelected function as well.
+
+DoCursors function as been temporarily remmed out, until a cursor handling method has been sorted.
+
+Replaced the XYZ label updating in the mouse move code to call a UpdateXYZLAbels function in the bottom dialog.
+
+All font color changing has been remmed out until a method in mfc can be figured out how to do this.
+
+All PaintForm references have been removed until that section has been ported. Might cosnider merging the paintform and the mainform intro one, if I can find a good way of merging the tool boxes.
+
+3DUndo.* renamed to Undo3D.*  All classes in these files have been prefixed with C.
+
+Think I fixed the ancient problem of the 3d views being useless for building faces or selecting vertices. I was using abs() for the funtions, and not fabs(). abs() is integers only. Doh!
+
+MdlMessages.h became MDLMSGS.H
+
+Got rid of the stupid orgasnisation of the globals files. I mean, why include the globals header file in the globals cpp? when all the vars are defined. Don't know what I was thinking.
+
+For the keyboard/menu shortcut manager, changed all CMenutem* references to CMenuItem, since the menu item is really only a collection of data from about the place, and one copy of each menu item will exists ever, so its ok. 
+
+Added in a g_Playing boolean global, to indicate if the animation is playing or not. Saves having external mdoules to access the main fialog to detect if the play button is active.
+
+moved the vwidth and related members to globals. Expedient solution, not a very good one tho.
+
+In all tehe KeyFuncs functions that actually do stuff, all the window painting references have been mvoed out and are the callers responsibility. May implement some sort of general feeback method, where the caller can ask what info has been chaged so it can intelligently decide what to redraw.
+
+In the SelectAll and related functions, I used bool *n as a local, and used int n for looping inside those funcs. Braindead.
+
+Moved the FitAllBut function into KControlFitAll() in keyfuncs.
+
+Moved the FitSelectedBut stuff into KControlFitSelected() in keyfuncs.
+
+Replaced the content of the CalcAllNormals() CalcAllNormals(int) and CalcSelectedNormals into TCompleteModel::CalcNormals(UINT Action, int FrameNo = 1)
+
+Moved the NextFrame and PrevFrame function guts into KeyFuncs.*
+
+Added in KControlLastFrame a.d KControlFirstFrame to the KeyFuncs function list.
+
+Took out the Progress dialog diplaying code in teh append frames and export functions. Sicne there is no callbasck for it in the mdl saving functions. 
+
+Had to do a few hacks to get the main window handling the keypresses. Had to whack a PreTranslateMessage() handler into every child dialog, and into the main dialog, which check for WM_KEYDOWN messages, and sends them to the Main window instead of the target control. Will have to do some checking shit to cater for Edit boxes, but shold be in general, fine.
+
+Moved the CreateCount and CreateList variables from teh main form file, and into the globals.
+
+Added a m_KeyState of type CShiftState to the main window, to keep track of ctrl, alt and whatnot keypresses.
+
+Added in a GetCWndHeight() and GetCWndWidth() functions to MainFunc.h. Because MFC requires the annoying round about method of getting the window rect, and exrtacting paramaters from there.
+
+Added in globals vars for the downx and downy for the skin editor. Instead of using g_downx, and g_downy, the Skin Editor now uses g_DownS, and g_DownY, and g_UpS and g_UpT. Just to avoid any toubles that may arise if confusions from main and skin editor arise.
+
+Changed SkinUndo.* to UndoSkin.*
+
+Changed the global Undo and Redo vars to g_MainUndo and g_MainRedo
+
+Similarly, changed the SkinUndo and SkinRedo vars to g_SkinUndo and g_SkinRedo
+
+Had to reqork the menu shortcuts. CBuilder worked off scancodes or VK keys for the shortcut of each menuitem. VC uses a Menu caption with a shortcut string as a suffix. Also VC does not update the accelerator table automatically, so that is a good things, since all keypresses are being handled by the program, and not by the menus.
+
+Had to change the drawingroutines for the Skin Editor so it handled the different way that VC and CBuilder handles client rects and whatnot. It had some weird results when the dialog is being resized, which must be sorted out.
+
+Moved the IsSkinVertUsedByUnselected() function into the MainFunc.h file.
+
+Changed the SelectionSource enum to CSelectSource
+
+Added a CleanUpGlobals() function in the Mainfunc.h file. This function generally performs any cleanup necessary by the global vars that are dynamically allocated.
+
+Renamed the functions KEditDeleteCurrent() to KEditDeleteFrameCurrent() and KEditDeleteRange() to KEditDeleteFrameRange()
+
+The code that deletes a range of frames as been moved from the DeleteFrameRangeForm into the KEditDeleteFrameRange() function.
+
+Fixed a problem with the 3d drawing code. Misplaced a set of {}, and the selected vertices were not being displayed properly in the 3d view if Vertex Ticks were not being used.
+
+The KEditMoveFrame() function has now been partially rewritten. It actually works instead of half working. Its still a very clunky algorithm and should be replaced we something better.
+ 
+Made it so the viewports update correctly when the camera is playing, and the camera or other viewports are also being panned at the same time. Previously, animation stopped while mouse dragging operations were interpreted. Good Thing!
+
+Made a GlobFuncs.cpp and .h file. This is for functions or classes which will interface between more than one dialog, or separate entities. These functions could be places in the KeyFuncs files, but would comlicate things more.
+
+Fixed it so the 3d view does not select triangles if they are invisible.
+
+For the KOutputBoundingBox function, it was not using the last frame in a sequence in the bbox calcs. Fixed
+
+Just found the damned function equivelient of fnsplit from borland's c products. Its call _splitpath and _makepath. Annoying.
+
+Fixed the Matrix3::MakeRotationMAtrix so it refelcted the way that the camera does it';s rotations. The Matrix and the regular way of transforming vertices to be drawn on the camera are now interchangable. Since that  is fixed, I put in panning the camera around in the 3D view using the middle mouse in pan views mode.
+
+Added a GetViewAxis() function, that returns the transofrmation matrix for the current view.
+
+In the calculations to calculate the normals of each vertex, it was using (norm1+norm2+...+normn) / n, which is usually close, but almost never correct. This has been changed to doing Vec.Normalize().
+
+Changed it so that if right dragging at some point, and the mouseup event occours while over the titlebar, the control menu will not appear.
+
+Fixed a bug which if the origin was being displayed, and the origin was too close, the model was not drawn.
+
+After each call to a GetDC() function, either which is a memeber of a CWnd, or just a regular WinAPI function, the complemtry ReleaseDC function is called. The problems created from not doing this became very very apparent after using GetDc functions in ownerdrawing in a list box. May not be always necessary, but seems like a good idea.
+
+Changed it so that the Reference model is drawn after the grid, not before.
+
+Removed the g_Reference varaible, and just let the g_pRef global handle the reference model stuff.
+
+Made two new classes, CColorButton, and CColorListBox, for handle the color pickign and displaying for the Skin Painting dialog.
+
+With regards to the keydown messages of child dialogs, being sent up the chain to the top most owner dialog window, whenever messages are sent from the PreTranslateMessage() function, they are sent using PostMessage(), rather than SendMessage(). SendMessage was produced problems by somehow doubling up messages.
+
+Added a WrapMouseToScreen() function to MainFunc.h   This handles the mouse cursor wrapping when the cursor goes near the edge of the screen. Its just so that all parts of the rpogram uses the same method
+
+In the TCompleteModel::LoadFromMd2() function, the skin loading anged so it will adjust the skin sizes if they do not match the pcx files when loading.
+
+The color config page in the Settings dialog has been changed. It was much easier to implement that way, and is a much cleaner apprach than before.
+
+Added in keyboard functions for the Skin Painter. There aren't very many, but are basically enough for now. Can be easily add on demand.
+
+The Show Model properties now outputs its information to the Console Window (used to be the Memo Form)
+
+Found a major leak in the SaveToMD2 function. Was allocating a new array of triangle normals for each frame, and not allocating them. BAD!

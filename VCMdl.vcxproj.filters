@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c8bead0e-fefb-4fef-bd33-a24eeab19424}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Units">
+      <UniqueIdentifier>{418e38fa-6511-4612-8536-eb0af3914da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls">
+      <UniqueIdentifier>{6fa633da-50ea-486b-afa0-e76ee9042c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\MainEditor">
+      <UniqueIdentifier>{9fbab5a9-492d-4434-9db2-f0a3c24c69bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\MainEditor\CPP Main">
+      <UniqueIdentifier>{fc30ab50-a8d8-4fb7-ade4-65e51c0859a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\MainEditor\H Main">
+      <UniqueIdentifier>{687d6581-7082-4d31-8922-eaed5d3873c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\SkinEditor">
+      <UniqueIdentifier>{a576c0e7-ab7c-4733-8455-27c581f52d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\SkinEditor\CPP Skin">
+      <UniqueIdentifier>{ede0de32-529e-445d-bfbb-a1953fc75e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\SkinEditor\H Skin">
+      <UniqueIdentifier>{58db637f-43b0-4d55-99cc-92394e0709fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\Config">
+      <UniqueIdentifier>{9f61a2f6-798c-428d-958f-c56b96b73415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\PaintEditor">
+      <UniqueIdentifier>{a202cf79-8a0f-48af-b799-cd60d7ebd26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\PaintEditor\CPP Paint">
+      <UniqueIdentifier>{c531f05f-bbb2-442c-b4f2-c38f8f91aee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs And Controls\PaintEditor\H Paint">
+      <UniqueIdentifier>{02dc0c18-07ed-40aa-8144-7ba1204f295c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e3b2f03a-3dc7-459e-a8ec-77addc74b5cf}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{34da1755-f787-4aa4-ae8c-db72e95dc728}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Shell Browser">
+      <UniqueIdentifier>{ab6e5a94-f248-4084-9f97-9cfb46e83c31}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\Bones.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\Colors.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\DibFuncs.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\Keyboard.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\KeyFuncs.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\Light.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\LWOHeadr.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\MainFunc.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\MATRIX.H">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\MdlConst.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\MDLGlobs.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\MDLType.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\MenuItem.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\OldMdlCn.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\ProgSet.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\RegClass.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\RegCtrl.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\Undo.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\Undo3D.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\UndoSkin.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="VCMDLDlg.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="BonesTab.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="BottmDlg.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatTab.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ExTypDlg.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ModTab.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SideDlg.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTab.h">
+      <Filter>Dialogs And Controls\MainEditor\H Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SBotmDlg.h">
+      <Filter>Dialogs And Controls\SkinEditor\H Skin</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinDlg.h">
+      <Filter>Dialogs And Controls\SkinEditor\H Skin</Filter>
+    </ClInclude>
+    <ClInclude Include="SModTab.h">
+      <Filter>Dialogs And Controls\SkinEditor\H Skin</Filter>
+    </ClInclude>
+    <ClInclude Include="SToolDlg.h">
+      <Filter>Dialogs And Controls\SkinEditor\H Skin</Filter>
+    </ClInclude>
+    <ClInclude Include="ClrCfgPg.h">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="DirCfgPg.h">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCfgPg.h">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyDlg.h">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="ClrButn.h">
+      <Filter>Dialogs And Controls\PaintEditor\H Paint</Filter>
+    </ClInclude>
+    <ClInclude Include="ColLstBx.h">
+      <Filter>Dialogs And Controls\PaintEditor\H Paint</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintDlg.h">
+      <Filter>Dialogs And Controls\PaintEditor\H Paint</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintTab.h">
+      <Filter>Dialogs And Controls\PaintEditor\H Paint</Filter>
+    </ClInclude>
+    <ClInclude Include="ATabCtrl.h">
+      <Filter>Dialogs And Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ConDlg.h">
+      <Filter>Dialogs And Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="MiscDlgs.h">
+      <Filter>Dialogs And Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="PasteDlg.h">
+      <Filter>Dialogs And Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDlg.h">
+      <Filter>Dialogs And Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\ANORMS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGlobs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\HelperFuncs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Units\old\MATRIX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MdlMsgs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoCfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VCMdl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShlBrows\SHFile.h">
+      <Filter>Shell Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShlBrows\SHPidl.h">
+      <Filter>Shell Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShlBrows\SHTree.h">
+      <Filter>Shell Browser</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VCMdl.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Units\Bones.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\Colors.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\DibFuncs.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\Keyboard.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\KeyFuncs.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\Light.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\MainFunc.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\MATRIX.CPP">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\MdlConst.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\MDLGlobs.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\MDLType.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\MenuItem.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\OldMdlCn.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\ProgSet.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\RegClass.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\RegCtrl.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\Undo.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\Undo3D.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\UndoSkin.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="VCMDLDlg.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="BonesTab.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="BottmDlg.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CreatTab.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ExTypDlg.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ModTab.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SideDlg.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTab.cpp">
+      <Filter>Dialogs And Controls\MainEditor\CPP Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SBotmDlg.cpp">
+      <Filter>Dialogs And Controls\SkinEditor\CPP Skin</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinDlg.cpp">
+      <Filter>Dialogs And Controls\SkinEditor\CPP Skin</Filter>
+    </ClCompile>
+    <ClCompile Include="SModTab.cpp">
+      <Filter>Dialogs And Controls\SkinEditor\CPP Skin</Filter>
+    </ClCompile>
+    <ClCompile Include="SToolDlg.cpp">
+      <Filter>Dialogs And Controls\SkinEditor\CPP Skin</Filter>
+    </ClCompile>
+    <ClCompile Include="ClrCfgPg.cpp">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="DirCfgPg.cpp">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyCfgPg.cpp">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyDlg.cpp">
+      <Filter>Dialogs And Controls\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Clrbutn.cpp">
+      <Filter>Dialogs And Controls\PaintEditor\CPP Paint</Filter>
+    </ClCompile>
+    <ClCompile Include="ColLstBx.cpp">
+      <Filter>Dialogs And Controls\PaintEditor\CPP Paint</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintDlg.cpp">
+      <Filter>Dialogs And Controls\PaintEditor\CPP Paint</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintTab.cpp">
+      <Filter>Dialogs And Controls\PaintEditor\CPP Paint</Filter>
+    </ClCompile>
+    <ClCompile Include="ATabCtrl.cpp">
+      <Filter>Dialogs And Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="ConDlg.cpp">
+      <Filter>Dialogs And Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="MiscDlgs.cpp">
+      <Filter>Dialogs And Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="PasteDlg.cpp">
+      <Filter>Dialogs And Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeDlg.cpp">
+      <Filter>Dialogs And Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGlobs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Units\HelperFuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UndoCfg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VCMdl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShlBrows\SHFile.cpp">
+      <Filter>Shell Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShlBrows\SHPidl.cpp">
+      <Filter>Shell Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShlBrows\SHTree.cpp">
+      <Filter>Shell Browser</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\ArrowDraw.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowDropper.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowMinus.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowMove.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowNorm.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowOrigin.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowPan.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowRotate.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowScale.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowSelect.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowTri.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\ArrowVert.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\VCMDL.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\VCMDL.rc2">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>
